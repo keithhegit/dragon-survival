@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:vitest/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "vitest"
+  ],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "error",
+    "import/no-unresolved": "error",
+    "vitest/expect-expect": "error",
+    "vitest/no-disabled-tests": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": ["./tsconfig.json", "./tsconfig.node.json"]
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "alias": {
+        "map": [
+          ["@", "./src"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    }
+  }
+} 
