@@ -77,4 +77,4 @@ npm test
 
 ## 许可证
 
-MIT License 
+MIT License # dragon-survival
